@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.10.0]
+        node-version: [16.0]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -43,7 +43,17 @@ jobs:
       - name: Exporting Bundle Files 🎪
         run: yarn export
       - run: touch ./out/.nojekyll
-
+      - name: Configure Git
+        run: |
+          git config --global Piyussh01 "${{ github.actor }}"
+          git config --global piyusshsinghal01@gmail.com "${{ github.actor }}@users.noreply.github.com"
+          git config --global credential.helper "store --file=$HOME/.git-credentials"
+          echo "machine github.com login ${{ secrets.GITHUB_TOKEN }}" > $HOME/.git-credentials
+      - name: Debug Git Environment
+        run: |
+          git --version
+          git remote -v
+          git branch -a 
       - name: Deploy to Github-Pages 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
