@@ -2,7 +2,7 @@
   "name": "piyussh-portfolio",
   "version": "2.0.0",
   "private": true,
-  "homepage": "https://piyussh01.github.io/",
+  "homepage": "https://piyussh01.github.io",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
