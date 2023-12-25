@@ -1,6 +1,6 @@
 #!/bin/bash
 #have latest copy, if made changes from mobile
-git pull
+git pull origin master
 # Add all changes
 git add .
 
