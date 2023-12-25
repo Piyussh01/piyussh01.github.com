@@ -5,7 +5,7 @@
   "homepage": "https://piyussh01.github.io/",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d node_modules/next/dist/build",
+    "deploy": "gh-pages -b master -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
